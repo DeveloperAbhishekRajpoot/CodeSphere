@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'codesphere.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',  # Your database name (default is "postgres")
+        'USER': 'postgres',  # Your PostgreSQL username (default is "postgres")
+        'PASSWORD': 'abhi@C9J',  # Your PostgreSQL password
+        'HOST': 'localhost',  # Default host
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
 
