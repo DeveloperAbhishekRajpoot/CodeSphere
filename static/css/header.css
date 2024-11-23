@@ -1,0 +1,55 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #61dafb;
+    text-decoration: underline;
+}
+
+.auth-links .btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.auth-links .btn-signup {
+    background-color: #61dafb;
+    border: none;
+}
+
+.auth-links .btn-login {
+    background-color: #4CAF50;
+    border: none;
+}
+
+.auth-links .btn:hover {
+    opacity: 0.9;
+}
