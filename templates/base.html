@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} <!-- Load the static template tag library -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CodeSphere{% endblock %}</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+<body>
+    <!-- Include Header -->
+    {% include 'header.html' %}
+
+    <!-- Main Content Area -->
+    <main>
+        {% block content %}
+        <!-- Default content can go here (optional) -->
+        {% endblock %}
+    </main>
+
+    <!-- Include Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>
