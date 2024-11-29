@@ -3,8 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #292f3a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #2C2C2C;
 }
 
 .logo img {
@@ -15,18 +14,23 @@
     list-style: none;
     display: flex;
     gap: 50px;
+    padding: 8px 15px 10px 15px;
+    cursor: pointer;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 15px;
+    padding: 8px 15px 10px 15px;
+    
 }
 
 .nav-links a:hover {
-    color: #61dafb;
-    text-decoration: underline;
+    background-color: white;
+    color: black;
+    border-radius: 40px;
+    transition:all 0.4s;
 }
 
 .auth-links .btn {
@@ -39,14 +43,12 @@
     margin-left: 10px;
 }
 
-.auth-links .btn-signup {
-    background-color: #61dafb;
-    border: none;
-}
+
 
 .auth-links .btn-login {
     background-color: #4CAF50;
     border: none;
+    margin-right: 20px;
 }
 
 .auth-links .btn:hover {
