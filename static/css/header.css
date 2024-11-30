@@ -6,8 +6,8 @@
     background-color: #2C2C2C;
 }
 
-.logo img {
-    height: 20px;
+ img {
+    margin-left: 50px;
 }
 
 .nav-links {
@@ -41,12 +41,13 @@
     font-size: 14px;
     font-weight: bold;
     margin-left: 10px;
+    background-color: hsl(26, 82%, 54%);
 }
 
 
 
 .auth-links .btn-login {
-    background-color: #4CAF50;
+    background-color: hsl(26, 82%, 54%);
     border: none;
     margin-right: 20px;
 }
