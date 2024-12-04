@@ -3,7 +3,112 @@
 }
 
 .landing-page-main-container{
-    height: 50%;
+    display: flex;
+    height: 450px;
     width: 100%;
-    background-color: white;
 }
+.left-container{
+    width: 50%;
+    height: 100%;
+}
+.left-container img {
+    position: relative; 
+    height: 265px;
+    width: 370px; 
+    border-radius: 25px; 
+    top: 150px;
+    left: 100px;
+    transform: rotate(-10deg);
+    box-shadow: 50px 40px 30px rgba(88, 86, 86, 0.5);
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-container h1{
+    color: #ffff;
+    font-size: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.right-container p{
+    color: #ffff;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.9em;
+    opacity: 0.5;
+    max-width: 600px;
+    text-align: center;
+}
+
+.right-container button{
+    margin-top: 30px;
+    background: #1da09c;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    font-size: 12px;
+    border-radius: 1020px;
+    border: #1da09c;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.right-container a {
+    text-decoration: none;
+}
+
+.landing-page-part-two{
+    width: 100%;
+    height: 300px;
+}
+
+.landing-page-part-two-left{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    text-align: end;
+    width: 55%;
+    height: 250px;
+}
+
+.landing-page-part-two i{
+    font-size: 100px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+.landing-page-part-two a i , a{
+    font-size: 15px;
+    text-decoration: none;
+}
+.landing-page-part-two-left h2{
+    position: relative;
+    color: #1da09c;
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 50px;
+    line-height: 1.5em;
+    left: 30px;
+}
+
+.landing-page-part-two-left span{
+    color: #ffff;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.9em;
+    opacity: 0.5;
+    margin-top: 20px;
+}
+
+
+
+
