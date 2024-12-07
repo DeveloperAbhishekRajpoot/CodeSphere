@@ -249,8 +249,54 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
- 
- 
+/* part four */
 
+.landing-page .landing-page-part-four {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    margin-top: 80px;
+}
 
+.landing-page .landing-page-part-four h2 {
+    font-weight: 700;
+    font-size: 23px;
+    margin: 5px 0 10px 0;
+    line-height: 1.5em;
+    color: #1da09c;
+}
 
+.landing-page .landing-page-part-four p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.8em;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0.5;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.landing-page .landing-page-part-four .ri-hexagon-line {
+    position: relative;
+    font-size: 80px;
+    font-weight: bold;
+    color: #1da09c;
+    left: 15px;
+}
+.landing-page .landing-page-part-four .ri-code-s-slash-fill {
+    position: relative;
+    font-size: 20px;
+    color: #1da09c;
+    right: 42px;
+    bottom: 19px;
+}
+
+.playground-section .editor-container {
+    height: 400px;
+    width: 80%;
+    border: 1px solid #ddd;
+}
