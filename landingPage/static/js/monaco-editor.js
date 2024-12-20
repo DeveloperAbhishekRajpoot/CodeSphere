@@ -1,80 +1,66 @@
 require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.43.0/min/vs' } });
+
+let editor; // Global editor variable
+
 require(['vs/editor/editor.main'], function () {
-    monaco.editor.create(document.getElementById('editor'), {
+    editor = monaco.editor.create(document.getElementById('editor'), {
         value: `# Welcome to CodeSphere!
-    #include <iostream>
-    using namespace std;
-
-    // Define a Node structure for the Binary Tree
-    struct Node {
-        int data;
-        Node* left;
-        Node* right;
-
-        Node(int value) {
-            data = value;
-            left = nullptr;
-            right = nullptr;
-        }
-    };
-
-    // Function to insert a new node into the binary tree
-    Node* insert(Node* root, int value) {
-        if (root == nullptr) {
-            return new Node(value);
-        }
-        if (value < root->data) {
-            root->left = insert(root->left, value);
-        } else {
-            root->right = insert(root->right, value);
-        }
-        return root;
-    }
-
-    // In-order Traversal Function
-    void inOrderTraversal(Node* root) {
-        if (root == nullptr) {
-            return;
-        }
-        inOrderTraversal(root->left);
-        cout << root->data << " ";
-        inOrderTraversal(root->right);
-    }
-
-    // Search Function
-    bool search(Node* root, int value) {
-        if (root == nullptr) return false;
-        if (root->data == value) return true;
-        if (value < root->data) return search(root->left, value);
-        return search(root->right, value);
-    }
-
-    int main() {
-        Node* root = nullptr;
-        root = insert(root, 10);
-        root = insert(root, 5);
-        root = insert(root, 15);
-        root = insert(root, 3);
-        root = insert(root, 7);
-        root = insert(root, 12);
-        root = insert(root, 18);
-
-        cout << "In-order Traversal: ";
-        inOrderTraversal(root);
-        cout << endl;
-
-        if (search(root, 7)) {
-            cout << "7 is found in the tree.";
-        } else {
-            cout << "7 is not found in the tree.";
-        }
-        return 0;
-    }
-    `,
-
+# Python code here.
+print("Hello, CodeSphere!")`,
         language: 'python',
         theme: 'vs-dark',
         automaticLayout: true,
     });
-    
+});
+
+// Code snippets for each language
+const cppCode = `#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, CodeSphere!" << endl;
+    return 0;
+}`;
+
+const javaCode = `public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, CodeSphere!");
+    }
+}`;
+
+const pythonCode = `# Welcome to CodeSphere!
+print("Hello, CodeSphere!")`;
+
+// Add event listeners to buttons
+document.querySelector('.cpp-btn').addEventListener('click', function () {
+    editor.setValue(cppCode);
+    monaco.editor.setModelLanguage(editor.getModel(), 'cpp');
+});
+
+document.querySelector('.java-btn').addEventListener('click', function () {
+    editor.setValue(javaCode);
+    monaco.editor.setModelLanguage(editor.getModel(), 'java');
+});
+
+document.querySelector('.python-btn').addEventListener('click', function () {
+    editor.setValue(pythonCode);
+    monaco.editor.setModelLanguage(editor.getModel(), 'python');
+});
+
+
+
+
+
+// *******************  js for the demo list  *********************
+
+document.addEventListener('DOMContentLoaded', function () {
+    const demoLinks = document.querySelectorAll('.demo-link');
+
+    demoLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            demoLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 });

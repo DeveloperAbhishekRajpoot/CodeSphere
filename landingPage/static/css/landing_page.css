@@ -313,6 +313,10 @@
     width: 100%;
     border: 1px solid #ddd;
 }
+
+.playground-section span{
+    font-weight: 400;
+}
 .playgound-left-container{
     display: flex;
     flex-direction: column;
@@ -354,12 +358,34 @@
     margin-left: 20px;
 }
 
+
+.playground-demo-list i{
+    color: #0088CC;
+    margin-right: 7px;
+ }
+ 
+
+
 .playground-demo-list li{
     list-style: none;
-    padding: 10px 30px;
-    border: 1px solid white;
-    border-radius: 5px;
     margin-bottom: 5px; 
+}
+
+.playground-demo-list .demo-link {
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    color: #0088CC;
+}
+
+ .demo-link.active {
+    border: 1px solid white;
+    background-color: transparent;
+    color: #007BFF;
+    font-weight: 400;
+    background-color: white;
 }
 
 /* last container css  */
