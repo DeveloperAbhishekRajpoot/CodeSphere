@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1a1a1a;
+}
+
+.problems-page-left-container{
+    height: 1000px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.course-container{
+    height: 150px;
+    width: 280px;
+    background-color: red;
+    margin: 10px;
+    margin-top: 70px;
+}
+
+/* STYLES FOR THE BUTTON    */
+
+#toggle-button {
+    background-color: #4b78a7;
+    color: white;
+    font-size: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-top: 20px;
+        
+}
+    
+#toggle-button:hover {
+  background-color: #0056b3;
+}
+    
+.problems-category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;  /* Space between each category */
+    padding: 20px;
+    justify-content: flex-start; 
+    margin-top: 0px;
+}
+.problems-category-container a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 5px 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.problems-category-container span{
+    font: 12px apple-system , BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding:0px 6px;
+    color: #EFF2F699;
+    background-color: #FFFFFF1A;
+    border-radius: 20px;
+}
+.problems-category-container a:hover {
+    color: blue;
+}
+
+/* Change the span color when the parent <a> is hovered */
+.problems-category-container a:hover span {
+    color: blue;
+    background-color: rgb(106, 106, 231);
+}
+
+
+/* kal expand button ko fix karna hai  */

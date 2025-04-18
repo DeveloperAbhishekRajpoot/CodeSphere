@@ -3,22 +3,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2C2C2C;
+    border-bottom: 1px solid #413333;
+    background-color: #2e2a2a;
+    height:60px;
+    width: 100%;
 }
 
 .logo {
     display: flex;
     flex-direction: row;
-    align-items: center; 
-    
-    
+    align-items: center;  
 }
 
  .logo img {
-    height: 50px;
+    height: 60px;
     width: 50px;
     margin-left: 50px;
     margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 7px;
 }
 
 .logo h3{
