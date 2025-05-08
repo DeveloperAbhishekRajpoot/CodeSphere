@@ -1,0 +1,89 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+}
+
+/* Container for the problem description */
+.problem-container {
+    width: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-right: 1px solid #30363d;
+    background-color: #161b22;
+}
+
+/* Headings */
+h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Strong tags for labels */
+strong {
+    color: #58a6ff;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.5rem 0 1rem;
+    line-height: 1.6;
+}
+
+/* Code blocks */
+code {
+    background-color: #21262d;
+    color: #f0f6fc;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Example Input and Output Blocks */
+pre {
+    background-color: #21262d;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #f0f6fc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+
+/* sliding mechanish css */
+
+.resizable-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.problem-container {
+    width: 50%;
+    min-width: 200px;
+    max-width: 80%;
+    padding: 20px;
+    background-color: #1e1e2f;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.resizer {
+    width: 5px;
+    cursor: ew-resize;
+    background-color: #555;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+}
+

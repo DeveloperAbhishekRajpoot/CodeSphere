@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/individual_problem.css' %}">
+        <title>{{ problem.title }}</title>
+    </head>
+    <body>
+        <div class="resizable-layout">
+            <div class="problem-container" id="leftPanel">
+                <h1>{{ problem.title }}</h1>
+                <p><strong>Difficulty:</strong> {{ problem.difficulty }}</p>
+                <p>{{ problem.description|safe }}</p>
+                <p><strong>Input:</strong> {{ problem.input_description }}</p>
+                <p><strong>Output:</strong> {{ problem.output_description }}</p>
+                <p><strong>Constraints:</strong> {{
+                    problem.constraints|linebreaks }}</p>
+                <p>{{ problem.example_input_output|linebreaks }}</p>
+            </div>
+            <div class="resizer" id="resizer"></div>
+            <div class="right-panel">
+                <!-- You can implement test cases/code editor/anything here -->
+                <p>This is the right side panel.</p>
+            </div>
+        </div>
+        <script src="{% static 'js/resizer.js' %}"></script>
+    </body>
+</html>

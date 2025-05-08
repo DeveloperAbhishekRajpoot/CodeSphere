@@ -1,24 +1,23 @@
-from django.shortcuts import render
 
-def problems(request):
-    categories = [
-        "Array", "String", "Hash Table", "Dynamic Programming", "Math", "Sorting",
-        "Greedy", "Depth-First Search", "Database", "Binary Search", "Matrix", "Tree",
-        "Breadth-First Search", "Bit Manipulation", "Two Pointers", "Prefix Sum",
-        "Heap (Priority Queue)", "Binary Tree", "Simulation", "Stack", "Graph",
-        "Counting", "Sliding Window", "Design", "Enumeration", "Backtracking",
-        "Union Find", "Linked List", "Ordered Set", "Number Theory", "Monotonic Stack",
-        "Segment Tree", "Trie", "Bitmask", "Combinatorics", "Queue",
-        "Divide and Conquer", "Recursion", "Memoization", "Binary Indexed Tree",
-        "Geometry", "Binary Search Tree", "Hash Function", "String Matching",
-        "Topological Sort", "Shortest Path", "Rolling Hash", "Game Theory",
-        "Interactive", "Data Stream", "Monotonic Queue", "Brainteaser",
-        "Randomized", "Merge Sort", "Doubly-Linked List", "Counting Sort",
-        "Iterator", "Concurrency", "Probability and Statistics", "Quickselect",
-        "Suffix Array", "Bucket Sort", "Minimum Spanning Tree", "Line Sweep",
-        "Shell", "Reservoir Sampling", "Strongly Connected Component",
-        "Eulerian Circuit", "Radix Sort", "Rejection Sampling",
-        "Biconnected Component"
-    ]
-    
-    return render(request, 'problems_page/problems_page.html', {'categories': categories})
+from django.shortcuts import render
+from .models import Problem, Tag
+from django.shortcuts import get_object_or_404
+
+
+# view to display problems with filtering by tags
+
+
+def problems_list(request):
+    tag_filter = request.GET.get('tag')
+    if tag_filter:
+        problems = Problem.objects.filter(tags__name=tag_filter)
+    else:
+        problems = Problem.objects.all()
+    tags = Tag.objects.all()
+    return render(request, 'problems_page/problems_page.html', {'problems': problems, 'tags': tags})
+
+# Problem detail view
+
+def problem_detail(request, slug):
+    problem = get_object_or_404(Problem, slug=slug)
+    return render(request, 'problems_page/problem_detail.html', {'problem': problem})

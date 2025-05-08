@@ -3,23 +3,22 @@
 
 {% block content %}
 
-<div class="problems-page-left-container">
-    <div class="course-main-container">
-        <div class="python-course-container course-container"></div>
-        <div class="java-course-container course-container"></div>
-        <div class="cpp-course-container course-container"></div>
-    </div>
-
-    <!-- Toggle Button -->
-    <button id="toggle-button">▼ Expand</button>
-
-    <div class="problems-category-container">
-        {% for category in categories %}
-           <a href="/">{{ category }} <span class="no-of-problems">0</span></a>
-        {% endfor %}
-   
-    </div>
-    <div class="problems-filter-container"></div>
+<h2>Filter by Tag</h2>
+<div>
+  {% for tag in tags %}
+    <a href="?tag={{ tag.name }}">{{ tag.name }}</a>
+  {% endfor %}
 </div>
+
+<h2>Problems</h2>
+<ul>
+  {% for problem in problems %}
+    <li>
+      <a href="{% url 'problem_detail' problem.slug %}">{{ problem.title }}</a> 
+      <span>{{ problem.difficulty }}</span>
+    </li>
+  {% endfor %}
+</ul>
+
 
 {% endblock %}

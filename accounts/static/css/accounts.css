@@ -37,6 +37,10 @@ span {
 	font-size: 12px;
 }
 
+button:hover{
+	cursor: pointer;
+}
+
 a {
 	color: #333;
 	font-size: 14px;
