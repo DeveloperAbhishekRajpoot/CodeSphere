@@ -3,22 +3,25 @@
 
 {% block content %}
 
-<h2>Filter by Tag</h2>
-<div>
-  {% for tag in tags %}
-    <a href="?tag={{ tag.name }}">{{ tag.name }}</a>
-  {% endfor %}
-</div>
+<div class="problems-left-container">
+  <h2 id="filter">Filter by Tag</h2>
+  <div class="filter-container">
+    {% for tag in tags %}
+    <a class="filter-tag" href="?tag={{ tag.name }}">{{ tag.name }}</a>
+    {% endfor %}
+  </div>
 
-<h2>Problems</h2>
-<ul>
-  {% for problem in problems %}
+  <h2>Problems</h2>
+  <ul>
+    {% for problem in problems %}
     <li>
-      <a href="{% url 'problem_detail' problem.slug %}">{{ problem.title }}</a> 
+      <a href="{% url 'problem_detail' problem.slug %}">{{ problem.title }}</a>
       <span>{{ problem.difficulty }}</span>
     </li>
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</div>
 
+<div class="problems-right-container"></div>
 
 {% endblock %}

@@ -2,8 +2,6 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d1117;
-    color: #c9d1d9;
     display: flex;
 }
 
@@ -11,9 +9,10 @@ body {
 .problem-container {
     width: 50%;
     padding: 2rem;
+    min-width: 300px;
     box-sizing: border-box;
-    border-right: 1px solid #30363d;
-    background-color: #161b22;
+    /* border-right: 1px solid #30363d; */
+    background-color: #262626;
 }
 
 /* Headings */
@@ -23,9 +22,13 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.text{
+    color: gray;
+}
+
 /* Strong tags for labels */
 strong {
-    color: #58a6ff;
+    color: white;
 }
 
 /* Paragraphs */
@@ -37,7 +40,7 @@ p {
 /* Code blocks */
 code {
     background-color: #21262d;
-    color: #f0f6fc;
+    color: gray;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
@@ -49,7 +52,7 @@ pre {
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
-    color: #f0f6fc;
+    color: gray;
     font-size: 0.95rem;
     line-height: 1.4;
 }
@@ -69,21 +72,76 @@ pre {
     min-width: 200px;
     max-width: 80%;
     padding: 20px;
-    background-color: #1e1e2f;
-    color: #fff;
+    background-color: #262626;
     overflow-y: auto;
+    color:gray;
 }
 
 .resizer {
     width: 5px;
     cursor: ew-resize;
-    background-color: #555;
+    background-color: #1e1b1b;
 }
 
 .right-panel {
     flex: 1;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #262626;
     overflow-y: auto;
 }
 
+/* Monaco Code Editor Styles */
+
+.right-panel{
+    width: 50%;
+    min-width: 300px;
+    max-width: 80%;
+    padding: 20px;
+    background-color: #262626;
+    color: #fff;
+    overflow-y: auto;
+}
+.editor-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#editor {
+    flex-grow: 1;
+    height: 500px; /* Adjust as needed or use 100% for dynamic */
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.editor-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #1e1b1b;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+.right-panel button{
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 800;
+}

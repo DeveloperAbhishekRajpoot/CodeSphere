@@ -11,20 +11,32 @@
         <div class="resizable-layout">
             <div class="problem-container" id="leftPanel">
                 <h1>{{ problem.title }}</h1>
-                <p><strong>Difficulty:</strong> {{ problem.difficulty }}</p>
-                <p>{{ problem.description|safe }}</p>
-                <p><strong>Input:</strong> {{ problem.input_description }}</p>
-                <p><strong>Output:</strong> {{ problem.output_description }}</p>
-                <p><strong>Constraints:</strong> {{
-                    problem.constraints|linebreaks }}</p>
-                <p>{{ problem.example_input_output|linebreaks }}</p>
+                <p class="text"><strong>Difficulty:</strong> {{ problem.difficulty }}</p>
+                <p class="text">{{ problem.description|safe }}</p>
+                <p class="text"><strong>Input:</strong> {{ problem.input_description }}</p>
+                <p class="text"><strong>Output:</strong> {{ problem.output_description }}</p>
+                <p class="text" >{{ problem.example_input_output|linebreaks }}</p>
+                <p class="text" ><strong>Constraints:</strong> {{ problem.constraints|linebreaks }}</p>
             </div>
             <div class="resizer" id="resizer"></div>
+
+            <!-- Right pannel goes here  -->
+             
             <div class="right-panel">
-                <!-- You can implement test cases/code editor/anything here -->
-                <p>This is the right side panel.</p>
+                <div class="editor-buttons">
+                    <button onclick="runCode()">Run</button>
+                    <button onclick="submitCode()">Submit</button>
+                </div>
+                <div class="editor-wrapper">
+                    <div id="editor" class="editor"></div>
+
+                </div>
             </div>
+
         </div>
         <script src="{% static 'js/resizer.js' %}"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs/loader.js"></script>
+        <script src="{% static 'js/monaco.js' %}"></script>
     </body>
 </html>

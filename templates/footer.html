@@ -1,3 +1,26 @@
-<footer>
-    <h3>copyright @ abhishek rajpoot</h3>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h2>CodeSphere</h2>
+            <p>Practice coding problems, prepare for interviews, and grow.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="{% url 'problems' %}">Problems</a>
+            <a href="{% url 'contest' %}">Contest</a>
+            <a href="{% url 'discuss' %}">Discuss</a>
+            <a href="{% url 'interview' %}">Interview</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Abhishek Rajpoot | All Rights Reserved</p>
+    </div>
 </footer>

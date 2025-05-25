@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from .models import Problem, Tag
+from .models import Problem, Tag ,CodeSnippet
 from django.shortcuts import get_object_or_404
 
 
@@ -20,4 +20,17 @@ def problems_list(request):
 
 def problem_detail(request, slug):
     problem = get_object_or_404(Problem, slug=slug)
-    return render(request, 'problems_page/problem_detail.html', {'problem': problem})
+    # Optional: Let user select language from query param (?lang=cpp)
+    language = request.GET.get('lang', 'python')  # Default to Python
+
+    # Try to get the code snippet for selected language
+    try:
+        code_snippet = problem.code_snippets.get(language=language).snippet
+    except CodeSnippet.DoesNotExist:
+        code_snippet = "# Code snippet not available for selected language"
+
+    return render(request, 'problems_page/problem_detail.html', {
+        'problem': problem,
+        'code_snippet': code_snippet,
+        'language': language,
+    })
