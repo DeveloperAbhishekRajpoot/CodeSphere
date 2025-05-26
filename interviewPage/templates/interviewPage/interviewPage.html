@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="interview-wraper">
+        <h1 class="page-title">CodeSphere Interview</h1>
+
+        <div class="interview-box" onclick="window.location.href='/create-interview/'">
+            <i class="ri-add-circle-fill"></i>
+            <p>Create an Interview</p>
+        </div>
+
+        <div class="details">
+            Plan and organize technical interviews effortlessly with CodeSphere. Click the box above to set up an interview session, choose topics, and generate unique coding challenges instantly. Whether you're preparing candidates or assessing peers, streamline your hiring process in one place.
+        </div>
+    </div>
+
+{% endblock %}

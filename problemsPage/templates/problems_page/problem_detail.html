@@ -11,21 +11,34 @@
         <div class="resizable-layout">
             <div class="problem-container" id="leftPanel">
                 <h1>{{ problem.title }}</h1>
-                <p class="text"><strong>Difficulty:</strong> {{ problem.difficulty }}</p>
+                <p class="text"><strong>Difficulty:</strong> {{problem.difficulty }}</p>
                 <p class="text">{{ problem.description|safe }}</p>
-                <p class="text"><strong>Input:</strong> {{ problem.input_description }}</p>
-                <p class="text"><strong>Output:</strong> {{ problem.output_description }}</p>
-                <p class="text" >{{ problem.example_input_output|linebreaks }}</p>
-                <p class="text" ><strong>Constraints:</strong> {{ problem.constraints|linebreaks }}</p>
+                <p class="text"><strong>Input:</strong> {{problem.input_description|safe }}</p>
+                <p class="text"><strong>Output:</strong> {{problem.output_description|safe }}</p>
+                <p class="text">{{ problem.example_input_output|linebreaks}}</p>
+                <p class="text"><strong>Constraints:</strong> {{problem.constraints|linebreaks }}</p>
             </div>
             <div class="resizer" id="resizer"></div>
 
             <!-- Right pannel goes here  -->
-             
+
             <div class="right-panel">
                 <div class="editor-buttons">
+                    <div class="language-selector">
+                        <select id="language-select" onchange="changeLanguage()">
+                            <option value="python" {% if language == 'python' %}selected{% endif %}>Python</option>
+                            <option value="cpp" {% if language == 'cpp' %}selected{% endif %}>C++</option>
+                            <option value="java" {% if language == 'java' %}selected{% endif %}>Java</option>
+                            <option value="c" {% if language == 'c' %}selected{% endif %}>C</option>
+                            <option value="javascript" {% if language == 'javascript' %}selected{% endif %}>JavaScript</option>
+
+                        </select>
+                    </div>
+
                     <button onclick="runCode()">Run</button>
                     <button onclick="submitCode()">Submit</button>
+                    <button  style="background-color: red;"  onclick="editor.setValue(`{{ code_snippet|escapejs }}`)">Reset</button>
+  
                 </div>
                 <div class="editor-wrapper">
                     <div id="editor" class="editor"></div>
@@ -34,9 +47,49 @@
             </div>
 
         </div>
+
+
         <script src="{% static 'js/resizer.js' %}"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs/loader.js"></script>
-        <script src="{% static 'js/monaco.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs/loader.js"></script>
+
+        <script>
+
+            // javasrcipt to cahnge the language -->
+
+            function changeLanguage() {
+                const language = document.getElementById('language-select').value;
+
+                // Reload the page with the selected language as a query parameter
+                const url = new URL(window.location.href);
+                url.searchParams.set('lang', language);
+                window.location.href = url;
+            }
+
+            // JavaScript to initialize the Monaco editor 
+
+            require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@latest/min/vs' } });
+
+            require(['vs/editor/editor.main'], function () {
+                window.editor = monaco.editor.create(document.getElementById('editor'), {
+                    value: `{{ code_snippet|escapejs }}`,
+                    language: '{{ language }}',
+                    theme: 'vs-dark',
+                    automaticLayout: true,  // ✅ IMPORTANT
+                });
+            });
+
+            function runCode() {
+                const code = editor.getValue();
+                console.log("Running code:\n", code);
+                // Send to backend (optional)
+            }
+
+            function submitCode() {
+                const code = editor.getValue();
+                console.log("Submitting code:\n", code);
+                // Send to backend (optional)
+            }
+
+        </script>
     </body>
 </html>

@@ -90,6 +90,12 @@ pre {
     overflow-y: auto;
 }
 
+/* language selector  */
+.language-selector{
+    background-color: #21262d;
+    font-weight: 600;
+}
+
 /* Monaco Code Editor Styles */
 
 .right-panel{
